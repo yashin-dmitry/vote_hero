@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Голосование за лучшего героя DOTA 2</h1>
+<a href="{% url 'character_create' %}" class="btn btn-primary">Добавить персонажа</a>
+
+{% for character in object_list %}
+<div class="card mb-3">
+    <img src="{{ character.image.url }}" alt="{{ character.name }}" style="width: 500px; height: 500px;">
+    <div class="card-body">
+        <h5 class="card-title">{{ character.name }}</h5>
+        <a href="{% url 'character_detail' character.pk %}" class="btn btn-secondary">Голосовать</a>
+        <a href="{% url 'character_delete' character.pk %}" class="btn btn-danger">Удалить</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
