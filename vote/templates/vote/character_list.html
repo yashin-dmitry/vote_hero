@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Голосование за лучшего героя DOTA 2</h1>
+<h1>Голосование за лучшего героя</h1>
 <a href="{% url 'character_create' %}" class="btn btn-primary">Добавить персонажа</a>
 
 {% for character in object_list %}
